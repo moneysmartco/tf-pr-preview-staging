@@ -1,0 +1,11 @@
+vpc_id                               = "id-xxx"
+app_name                             = "app-name+pr_id"
+app_name_service_container_name      = "app-name"
+app_name_health_check_path           = "/_ping"
+app_name_service_app_port            = 3000
+app_name_service_server_cpu          = 256
+app_name_service_server_memory       = 256
+app_name_task_required_cpu           = 256
+app_name_task_required_memory        = 256
+app_name_service_server_docker_image = "xxx.dkr.ecr.ap-southeast-1.amazonaws.com/sg_app_name:latest"
+app_name_ecs_service_desired_count   = 2
