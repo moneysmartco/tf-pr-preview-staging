@@ -9,7 +9,7 @@ resource "random_integer" "priority" {
 
 # Target Group
 module "target_group" {
-  source                       = "git@github.com:moneysmartco/tf-aws-alb-app.git?ref=v1.0"
+  source                       = "github.com/moneysmartco/tf-aws-alb-app?ref=v1.0"
   env                          = "${var.env}"
   vpc_id                       = "${var.vpc_id}"
   alb_listener_http_arn        = "${var.alb_listener_http_arn}"
@@ -31,7 +31,7 @@ module "target_group" {
 
 # ECS Service
 module "ecs_service" {
-  source                      = "git@github.com:moneysmartco/tf-aws-ecs-service.git?ref=v1.0"
+  source                      = "github.com/moneysmartco/tf-aws-ecs-service?ref=v1.0"
   env                         = "${var.env}"
   ecs_cluster                 = "${var.ecs_cluster}"
   project_name                = "${var.app_name}"
