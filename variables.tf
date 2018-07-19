@@ -10,7 +10,7 @@ variable "alb_listener_http_arn" {
   default = ""
 }
 
-variable "alb_listener_http_arn" {
+variable "alb_listener_https_arn" {
   default = ""
 }
 
@@ -77,6 +77,9 @@ variable "app_name_urls" {
 }
 
 ## ECS Service
+variable "ecs_cluster" {
+  default = ""
+}
 
 variable "app_name_service_container_name" {
   description = "This is the name of the container from the registry"
