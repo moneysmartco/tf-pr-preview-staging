@@ -1,5 +1,5 @@
 variable "env" {
-  default = "staging-preview"
+  default = "preview"
 }
 
 variable "vpc_id" {
