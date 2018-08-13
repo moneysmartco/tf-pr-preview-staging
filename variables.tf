@@ -47,6 +47,18 @@ variable "app_name_health_check_path" {
   default     = "/_ping"
 }
 
+variable "app_name_health_check_interval" {
+  default = 20
+}
+
+variable "app_name_health_check_healthy_threshold" {
+  default = 2
+}
+
+variable "app_name_health_check_unhealthy_threshold" {
+  default = 5
+}
+
 variable "app_name_domain_priority_init" {
   default = 100
 }
