@@ -9,7 +9,7 @@ resource "random_integer" "priority" {
 
 # Target Group
 module "target_group" {
-  source                           = "github.com/moneysmartco/tf-aws-alb-app?ref=v1.0"
+  source                           = "github.com/moneysmartco/tf-aws-alb-app?ref=master"
   env                              = "${var.env}"
   vpc_id                           = "${var.vpc_id}"
   alb_listener_http_arn            = "${var.alb_listener_http_arn}"
@@ -34,17 +34,18 @@ module "target_group" {
 
 # ECS Service
 module "ecs_service" {
-  source                      = "github.com/moneysmartco/tf-aws-ecs-service?ref=v1.0"
-  env                         = "${var.env}"
-  ecs_cluster                 = "${var.ecs_cluster}"
-  project_name                = "${var.app_name}"
-  service_container_name      = "${var.app_name_service_container_name}"
-  service_app_port            = "${var.app_name_service_app_port}"
-  service_server_cpu          = "${var.app_name_service_server_cpu}"
-  service_server_memory       = "${var.app_name_service_server_memory}"
-  task_required_cpu           = "${var.app_name_task_required_cpu}"
-  task_required_memory        = "${var.app_name_task_required_memory}"
-  service_server_docker_image = "${var.app_name_service_server_docker_image}"
-  ecs_service_desired_count   = "${var.app_name_ecs_service_desired_count}"
-  target_group_arn            = "${module.target_group.target_group_arn}"
+  source                             = "github.com/moneysmartco/tf-aws-ecs-service?ref=master"
+  env                                = "${var.env}"
+  ecs_cluster                        = "${var.ecs_cluster}"
+  project_name                       = "${var.app_name}"
+  service_container_name             = "${var.app_name_service_container_name}"
+  service_app_port                   = "${var.app_name_service_app_port}"
+  service_server_cpu                 = "${var.app_name_service_server_cpu}"
+  service_server_memory              = "${var.app_name_service_server_memory}"
+  task_required_cpu                  = "${var.app_name_task_required_cpu}"
+  task_required_memory               = "${var.app_name_task_required_memory}"
+  service_server_docker_image        = "${var.app_name_service_server_docker_image}"
+  ecs_service_desired_count          = "${var.app_name_ecs_service_desired_count}"
+  target_group_arn                   = "${module.target_group.target_group_arn}"
+  depends_on_target_group_attachment = "${module.target_group.target_group_attachment}"
 }
