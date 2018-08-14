@@ -47,5 +47,5 @@ module "ecs_service" {
   service_server_docker_image        = "${var.app_name_service_server_docker_image}"
   ecs_service_desired_count          = "${var.app_name_ecs_service_desired_count}"
   target_group_arn                   = "${module.target_group.target_group_arn}"
-  depends_on_target_group_attachment = "${module.target_group.target_group_attachment}"
+  depends_on_target_group_attachment = "${module.target_group.alb_listener_rule_domain_https_arn}"
 }
