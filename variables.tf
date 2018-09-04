@@ -123,5 +123,5 @@ variable "app_name_service_server_docker_image" {
 }
 
 variable "app_name_ecs_service_desired_count" {
-  default = 2
+  default = 1
 }
