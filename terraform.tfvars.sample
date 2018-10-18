@@ -10,3 +10,4 @@ app_name_task_required_memory        = 256
 app_name_service_server_docker_image = "xxx.dkr.ecr.ap-southeast-1.amazonaws.com/sg_app_name:latest"
 app_name_ecs_service_desired_count   = 2
 app_name_domains                     = "app_name+pr_id.example.com"
+alb_listener_https_arn               = "arn:xxx"

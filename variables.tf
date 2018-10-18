@@ -48,7 +48,7 @@ variable "app_name_health_check_path" {
 }
 
 variable "app_name_health_check_interval" {
-  default = 20
+  default = 10
 }
 
 variable "app_name_health_check_healthy_threshold" {
@@ -56,7 +56,7 @@ variable "app_name_health_check_healthy_threshold" {
 }
 
 variable "app_name_health_check_unhealthy_threshold" {
-  default = 5
+  default = 10
 }
 
 variable "app_name_domain_priority_init" {
@@ -64,8 +64,8 @@ variable "app_name_domain_priority_init" {
 }
 
 variable "app_name_domains" {
-  type    = "list"
-  default = []
+  description = "Separate by comma for multiple domains"
+  default = ""
 }
 
 variable "app_name_domain_and_url_priority_init" {
@@ -103,19 +103,19 @@ variable "app_name_service_app_port" {
 }
 
 variable "app_name_service_server_cpu" {
-  default = 256
+  default = 384
 }
 
 variable "app_name_service_server_memory" {
-  default = 256
+  default = 384
 }
 
 variable "app_name_task_required_cpu" {
-  default = 256
+  default = 384
 }
 
 variable "app_name_task_required_memory" {
-  default = 256
+  default = 384
 }
 
 variable "app_name_service_server_docker_image" {
@@ -123,5 +123,6 @@ variable "app_name_service_server_docker_image" {
 }
 
 variable "app_name_ecs_service_desired_count" {
-  default = 2
+  default = 1
 }
+

@@ -1,0 +1,6 @@
+.git*
+.dockerignore
+.circleci
+.terraform
+.editorconfig
+Dockerfile

@@ -24,7 +24,7 @@ module "target_group" {
   health_check_interval            = "${var.app_name_health_check_interval}"
   health_check_healthy_threshold   = "${var.app_name_health_check_healthy_threshold}"
   health_check_unhealthy_threshold = "${var.app_name_health_check_unhealthy_threshold}"
-  domains                          = "${var.app_name_domains}"
+  domains                          = "${split(",", var.app_name_domains)}"
   domain_priority_init             = "${random_integer.priority.result}"
   domains_and_urls                 = "${var.app_name_domains_and_urls}"
   domain_and_url_priority_init     = "${var.app_name_domain_and_url_priority_init}"
